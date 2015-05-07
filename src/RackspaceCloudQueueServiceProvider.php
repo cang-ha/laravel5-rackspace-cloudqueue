@@ -7,19 +7,19 @@ use Queue;
 class RackspaceCloudQueueServiceProvider extends ServiceProvider
 {
 
-	/**
-	 * Register the service provider.
-	 *
-	 * @return void
-	 */
-	public function register()
-	{
-		$this->app->booted(function () {
+    /**
+     * Register the service provider.
+     *
+     * @return void
+     */
+    public function register()
+    {
+        $this->app->booted(function () {
 
-			Queue::extend('rackspacecloudqueue', function () {
-				return new RackspaceCloudQueueConnector;
-			});
+            Queue::extend('rackspace', function () {
+                return new RackspaceCloudQueueConnector;
+            });
 
-		});
-	}
+        });
+    }
 }
