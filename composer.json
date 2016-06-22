@@ -1,8 +1,8 @@
 {
-  "name": "cchiles/laravel-rackspace-cloudqueue",
+  "name": "faulker/laravel-rackspace-cloudqueue",
   "description": "Rackspace CloudQueue driver for Laravel Queue",
   "require": {
-    "illuminate/queue": "5.0.*",
+    "illuminate/queue": "5.*",
     "rackspace/php-opencloud": "1.14.*"
   },
   "autoload": {
