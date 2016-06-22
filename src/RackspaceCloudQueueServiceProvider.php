@@ -1,6 +1,6 @@
-<?php namespace cchiles\RackspaceCloudQueue;
+<?php namespace Faulker\RackspaceCloudQueue;
 
-use cchiles\RackspaceCloudQueue\Queue\Connectors\RackspaceCloudQueueConnector;
+use Faulker\RackspaceCloudQueue\Queue\Connectors\RackspaceCloudQueueConnector;
 use Illuminate\Support\ServiceProvider;
 use Queue;
 
@@ -14,12 +14,12 @@ class RackspaceCloudQueueServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->booted(function () {
-
-            Queue::extend('rackspace', function () {
+        $this->app->booted(function ()
+        {
+            Queue::extend('rackspace', function ()
+            {
                 return new RackspaceCloudQueueConnector;
             });
-
         });
     }
 }

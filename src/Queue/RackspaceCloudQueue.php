@@ -1,13 +1,14 @@
-<?php namespace cchiles\RackspaceCloudQueue\Queue;
+<?php namespace Faulker\RackspaceCloudQueue\Queue;
 
 use OpenCloud\Common\Constants\Datetime;
 use OpenCloud\Queues\Service as OpenCloudService;
 use OpenCloud\Queues\Resource\Queue as OpenCloudQueue;
-use Jobs\RackspaceCloudQueueJob;
+use Faulker\RackspaceCloudQueue\Queue\Jobs\RackspaceCloudQueueJob;
 use Illuminate\Queue\Queue;
 use Illuminate\Contracts\Queue\Queue as QueueContract;
 
-class RackspaceCloudQueue extends Queue implements QueueContract {
+class RackspaceCloudQueue extends Queue implements QueueContract
+{
 
     /**
      * The Rackspace OpenCloud Message Service instance.
@@ -30,19 +31,20 @@ class RackspaceCloudQueue extends Queue implements QueueContract {
      */
     protected $default;
 
-    public function  __construct(OpenCloudService $openCloudService, $default)
+    public function __construct(OpenCloudService $openCloudService, $default)
     {
         $this->openCloudService = $openCloudService;
-        $this->default = $default;
-        $this->queue = $openCloudService->createQueue($default);
+        $this->default          = $default;
+        $this->queue            = $openCloudService->createQueue($default);
     }
 
     /**
      * Push a new job onto the queue.
      *
      * @param  string $job
-     * @param  mixed $data
+     * @param  mixed  $data
      * @param  string $queue
+     *
      * @return mixed
      */
     public function push($job, $data = '', $queue = null)
@@ -55,7 +57,8 @@ class RackspaceCloudQueue extends Queue implements QueueContract {
      *
      * @param  string $payload
      * @param  string $queue
-     * @param  array $options
+     * @param  array  $options
+     *
      * @return mixed
      */
     public function pushRaw($payload, $queue = null, array $options = array())
@@ -65,8 +68,7 @@ class RackspaceCloudQueue extends Queue implements QueueContract {
         return $this->queue->createMessage(array(
                 'body' => $payload,
                 'ttl'  => $ttl
-            )
-        );
+            ));
     }
 
     /**
@@ -83,6 +85,7 @@ class RackspaceCloudQueue extends Queue implements QueueContract {
      * Pop the next job off of the queue.
      *
      * @param  string $queue
+     *
      * @return RackspaceJob
      */
     public function pop($queue = null)
@@ -98,7 +101,7 @@ class RackspaceCloudQueue extends Queue implements QueueContract {
             'ttl'   => 5 * Datetime::MINUTE
         ));
 
-        if ($response and $response->valid())
+        if ( $response and $response->valid() )
         {
             $message = $response->current();
 
@@ -109,7 +112,8 @@ class RackspaceCloudQueue extends Queue implements QueueContract {
     /**
      * Get the queue or return the default.
      *
-     * @param  string|null  $queue
+     * @param  string|null $queue
+     *
      * @return string
      */
     public function getQueue($queue)

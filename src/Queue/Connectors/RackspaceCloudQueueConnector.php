@@ -1,11 +1,12 @@
-<?php namespace cchiles\RackspaceCloudQueue\Queue\Connectors;
+<?php namespace Faulker\RackspaceCloudQueue\Queue\Connectors;
 
-use cchiles\RackspaceCloudQueue\Queue\RackspaceCloudQueue;
+use Faulker\RackspaceCloudQueue\Queue\RackspaceCloudQueue;
 use OpenCloud\Rackspace;
 use OpenCloud\Queues\Service;
 use Illuminate\Queue\Connectors\ConnectorInterface;
 
-class RackspaceCloudQueueConnector implements ConnectorInterface {
+class RackspaceCloudQueueConnector implements ConnectorInterface
+{
 
     /**
      * @var \OpenCloud\Rackspace
@@ -21,11 +22,12 @@ class RackspaceCloudQueueConnector implements ConnectorInterface {
      * Establish a queue connection.
      *
      * @param  array $config
+     *
      * @return \Illuminate\Queue\QueueInterface
      */
     public function connect(array $config)
     {
-        switch ($config['endpoint'])
+        switch ( $config['endpoint'] )
         {
             case 'US':
                 $endpoint = Rackspace::US_IDENTITY_ENDPOINT;
@@ -35,24 +37,17 @@ class RackspaceCloudQueueConnector implements ConnectorInterface {
                 $endpoint = Rackspace::UK_IDENTITY_ENDPOINT;
         }
 
-        if ($this->connection == null)
+        if ( $this->connection == null )
         {
-            $this->connection = new Rackspace(
-                $endpoint,
-                array(
+            $this->connection = new Rackspace($endpoint, array(
                     'username' => $config['username'],
-                    'apiKey' => $config['apiKey']
-                )
-            );
+                    'apiKey'   => $config['apiKey']
+                ));
         }
 
-        if ($this->service === null)
+        if ( $this->service === null )
         {
-            $this->service = $this->connection->queuesService(
-                Service::DEFAULT_NAME,
-                $config['region'],
-                $config['urlType']
-            );
+            $this->service = $this->connection->queuesService(Service::DEFAULT_NAME, $config['region'], $config['urlType']);
         }
 
         $this->service->setClientId();
