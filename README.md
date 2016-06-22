@@ -1,5 +1,7 @@
 # Laravel 5 Rackspace CloudQueue Driver
 
+> NOTE: This is a fork of Russell Todd's Laravel 5.0 branch (https://github.com/npmweb/laravel-rackspace-cloudqueue)
+
 ##Installation
 
 ### Install via Composer
