@@ -21,9 +21,9 @@ class RackspaceCloudQueueConnector implements ConnectorInterface
     /**
      * Establish a queue connection.
      *
-     * @param  array $config
+     * @param array $config
      *
-     * @return \Illuminate\Queue\QueueInterface
+     * @return \Faulker\RackspaceCloudQueue\Queue\RackspaceCloudQueue
      */
     public function connect(array $config)
     {
