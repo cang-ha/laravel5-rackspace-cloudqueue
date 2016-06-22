@@ -3,11 +3,11 @@
   "description": "Rackspace CloudQueue driver for Laravel Queue",
   "require": {
     "illuminate/queue": "5.*",
-    "rackspace/php-opencloud": "1.14.*"
+    "rackspace/php-opencloud": "1.*"
   },
   "autoload": {
     "psr-4": {
-      "faulker\\RackspaceCloudQueue\\": "src/"
+      "Faulker\\RackspaceCloudQueue\\": "src/"
     }
   },
   "minimum-stability": "dev"
