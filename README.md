@@ -1,11 +1,11 @@
-# Laravel Rackspace CloudQueue Driver
+# Laravel 5 Rackspace CloudQueue Driver
 
 ##Installation
 
 ### Install via Composer
 Require this package in your composer.json and run composer update:
 
-"faulker/laravel-rackspace-cloudqueue": "~1.0"
+"faulker/laravel5-rackspace-cloudqueue": "~1.0"
 
 ### Add Configuration
 
