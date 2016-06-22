@@ -1,6 +1,22 @@
 {
   "name": "faulker/laravel5-rackspace-cloudqueue",
   "description": "Rackspace CloudQueue driver for Laravel 5 Queue",
+  "keywords": ["rackspace", "laravel", "laravel5", "queue", "cloud"],
+  "homepage": "https://github.com/faulker/laravel5-rackspace-cloudqueue",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Winter Faulk",
+      "email": "winter@faulk.me",
+      "homepage": "http://faulk.me",
+      "role": "Developer"
+    },
+    {
+      "name": "Russell Todd",
+      "homepage": "https://github.com/npmweb/laravel-rackspace-cloudqueue",
+      "role": "Developer"
+    }
+  ],
   "require": {
     "illuminate/queue": "5.*",
     "rackspace/php-opencloud": "1.*"
