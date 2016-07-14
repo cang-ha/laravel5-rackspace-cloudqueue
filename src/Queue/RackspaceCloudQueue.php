@@ -48,14 +48,7 @@ class RackspaceCloudQueue extends Queue implements QueueContract
      */
     public function push($job, $data = '', $queue = null)
     {
-        if(!empty($queue))
-        {
-            $this->queue = $this->openCloudService->createQueue($queue);
-        }
-        else
-        {
-            $this->queue = $this->openCloudService->createQueue($this->default);
-        }
+        $this->createQueue($queue);
 
         return $this->pushRaw($this->createPayload($job, $data), $queue);
     }
@@ -74,9 +67,9 @@ class RackspaceCloudQueue extends Queue implements QueueContract
         $ttl = array_key_exists('ttl', $options) ? $options['ttl'] : Datetime::DAY * 2;
 
         return $this->queue->createMessage(array(
-                'body' => $payload,
-                'ttl'  => $ttl
-            ));
+            'body' => $payload,
+            'ttl'  => $ttl
+        ));
     }
 
     /**
@@ -92,13 +85,15 @@ class RackspaceCloudQueue extends Queue implements QueueContract
     /**
      * Pop the next job off of the queue.
      *
-     * @param  string $queue
+     * @param null $queue
      *
-     * @return RackspaceJob
+     * @return \Faulker\RackspaceCloudQueue\Queue\Jobs\RackspaceCloudQueueJob
      */
     public function pop($queue = null)
     {
         $queue = $this->getQueue($queue);
+
+        $this->createQueue($queue);
 
         /**
          * @var \OpenCloud\Common\Collection\PaginatedIterator $response
@@ -115,6 +110,25 @@ class RackspaceCloudQueue extends Queue implements QueueContract
 
             return new RackspaceCloudQueueJob($this->container, $this->queue, $queue, $message);
         }
+    }
+
+    /**
+     * @param $queue
+     *
+     * @return \OpenCloud\Queues\Resource\Queue
+     */
+    private function createQueue($queue)
+    {
+        if(!empty($queue))
+        {
+            $this->queue = $this->openCloudService->createQueue($queue);
+        }
+        else
+        {
+            $this->queue = $this->openCloudService->createQueue($this->default);
+        }
+
+        return $this->queue;
     }
 
     /**
