@@ -35,7 +35,6 @@ class RackspaceCloudQueue extends Queue implements QueueContract
     {
         $this->openCloudService = $openCloudService;
         $this->default          = $default;
-        $this->queue            = $openCloudService->createQueue($default);
     }
 
     /**
@@ -49,6 +48,15 @@ class RackspaceCloudQueue extends Queue implements QueueContract
      */
     public function push($job, $data = '', $queue = null)
     {
+        if(!empty($queue))
+        {
+            $this->queue = $this->openCloudService->createQueue($queue);
+        }
+        else
+        {
+            $this->queue = $this->openCloudService->createQueue($this->default);
+        }
+
         return $this->pushRaw($this->createPayload($job, $data), $queue);
     }
 
