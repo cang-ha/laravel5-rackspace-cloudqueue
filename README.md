@@ -12,7 +12,7 @@ Require this package in your composer.json and run composer update:
 ### Add Configuration
 
 ```PHP
-/// config/queue.php
+// config/queue.php
 
 return array(
     'default'     => 'rackspace',
@@ -21,12 +21,12 @@ return array(
 
         'rackspace'  => [
             'driver'   => 'rackspace',
-            'queue'    => 'default_tube', /// the default queue
-            'endpoint' => 'US',  /// US or UK
+            'queue'    => 'default_tube', // the default queue
+            'endpoint' => 'US',  // US or UK
             'username' => 'SOME_RACKSPACE_USERNAME',
             'apiKey'   => 'SOME_RACKSPACE_API_KEY',
-            'region'   => 'ORD', /// THE REGION WHERE THE QUEUE IS SETUP
-            'urlType'  => 'internalURL', /// Optional, defaults to internalURL
+            'region'   => 'ORD', // THE REGION WHERE THE QUEUE IS SETUP
+            'urlType'  => 'internalURL', // [Optional] (default: internalURL) publicURL if connection from remote network or internalURL if connection from RackSpace network.
         ]
 
     ),
