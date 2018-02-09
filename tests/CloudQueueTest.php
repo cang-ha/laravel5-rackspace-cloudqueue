@@ -1,8 +1,8 @@
 <?php
 
-namespace Faulker\RackspaceCloudQueue\Tests;
+namespace CangHA\RackspaceCloudQueue\Tests;
 
-use Faulker\RackspaceCloudQueue\Queue\RackspaceCloudQueue;
+use CangHA\RackspaceCloudQueue\Queue\RackspaceCloudQueue;
 use Mockery as m;
 
 class CloudQueueTest extends TestCase
@@ -40,12 +40,12 @@ class CloudQueueTest extends TestCase
 
         $job = $queue->pop();
 
-        $this->assertInstanceOf('Faulker\RackspaceCloudQueue\Queue\Jobs\RackspaceCloudQueueJob', $job);
+        $this->assertInstanceOf('CangHA\RackspaceCloudQueue\Queue\Jobs\RackspaceCloudQueueJob', $job);
     }
 
     public function testPushProperlyPushesJobOn()
     {
-        $job = m::mock('Faulker\RackspaceCloudQueue\Queue\Jobs\RackspaceCloudQueueJob');
+        $job = m::mock('CangHA\RackspaceCloudQueue\Queue\Jobs\RackspaceCloudQueueJob');
 
         $openCloudQueue = m::mock('OpenCloud\Queues\Resource\Queue')
                            ->shouldReceive('createMessage')
