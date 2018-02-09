@@ -32,7 +32,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                'CangHA\RackspaceCloudQueue\RackspaceCloudQueueServiceProvider'
+                'CangHA\\RackspaceCloudQueue\\RackspaceCloudQueueServiceProvider'
             ],
         }
     },
