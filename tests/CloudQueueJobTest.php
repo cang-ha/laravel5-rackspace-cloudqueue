@@ -1,8 +1,8 @@
 <?php
 
-namespace Faulker\RackspaceCloudQueue\Tests;
+namespace CangHA\RackspaceCloudQueue\Tests;
 
-use Faulker\RackspaceCloudQueue\Queue\Jobs\RackspaceCloudQueueJob;
+use CangHA\RackspaceCloudQueue\Queue\Jobs\RackspaceCloudQueueJob;
 use Mockery as m;
 
 /**
