@@ -47,5 +47,5 @@
       "CangHA\\RackspaceCloudQueue\\Tests\\": "tests/"
     }
   },
-  "minimum-stability": "dev"
+  "minimum-stability": "stable"
 }
