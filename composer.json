@@ -1,10 +1,14 @@
 {
-  "name": "faulker/laravel5-rackspace-cloudqueue",
+  "name": "cang-ha/laravel5-rackspace-cloudqueue",
   "description": "Rackspace CloudQueue driver for Laravel 5 Queue",
   "keywords": ["rackspace", "laravel", "laravel5", "queue", "cloud"],
-  "homepage": "https://github.com/faulker/laravel5-rackspace-cloudqueue",
+  "homepage": "https://github.com/cang-ha/laravel5-rackspace-cloudqueue",
   "license": "MIT",
   "authors": [
+    { 
+      "name": "Cang Ho",
+      "role": "Developer"
+    }
     {
       "name": "Winter Faulk",
       "email": "winter@faulk.me",
@@ -23,8 +27,15 @@
   },
   "autoload": {
     "psr-4": {
-      "Faulker\\RackspaceCloudQueue\\": "src/"
+      "CangHA\\RackspaceCloudQueue\\": "src/"
     }
+    "extra": {
+        "laravel": {
+            "providers": [
+                'CangHA\RackspaceCloudQueue\RackspaceCloudQueueServiceProvider'
+            ],
+        }
+    },
   },
   "require-dev": {
     "phpunit/phpunit": "5.*",
@@ -33,7 +44,7 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "Faulker\\RackspaceCloudQueue\\Tests\\": "tests/"
+      "CangHA\\RackspaceCloudQueue\\Tests\\": "tests/"
     }
   },
   "minimum-stability": "dev"
