@@ -43,7 +43,7 @@ return array(
 return array(
 
     'providers'  => array(
-        'CangHA\RackspaceCloudQueue\RackspaceCloudQueueServiceProvider'
+        'cang-ha\RackspaceCloudQueue\RackspaceCloudQueueServiceProvider'
     ),
 );
 
