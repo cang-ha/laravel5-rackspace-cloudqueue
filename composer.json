@@ -27,12 +27,12 @@
   },
   "autoload": {
     "psr-4": {
-      "CangHA\\RackspaceCloudQueue\\": "src/"
+      "cang-ha\\RackspaceCloudQueue\\": "src/"
     },
     "extra": {
         "laravel": {
             "providers": [
-                "CangHA\\RackspaceCloudQueue\\RackspaceCloudQueueServiceProvider"
+                "cang-ha\\RackspaceCloudQueue\\RackspaceCloudQueueServiceProvider"
             ]
         }
     }
@@ -44,7 +44,7 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "CangHA\\RackspaceCloudQueue\\Tests\\": "tests/"
+      "cang-ha\\RackspaceCloudQueue\\Tests\\": "tests/"
     }
   },
   "minimum-stability": "stable"
