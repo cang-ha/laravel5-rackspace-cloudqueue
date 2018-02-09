@@ -1,11 +1,11 @@
 <?php
 
-namespace Faulker\RackspaceCloudQueue\Tests;
+namespace CangHA\RackspaceCloudQueue\Tests;
 
 abstract class TestCase extends \Orchestra\Testbench\TestCase
 {
     protected function getPackageProviders($app)
     {
-        return ['Faulker\RackspaceCloudQueue\RackspaceCloudQueueServiceProvider'];
+        return ['CangHA\RackspaceCloudQueue\RackspaceCloudQueueServiceProvider'];
     }
 }
