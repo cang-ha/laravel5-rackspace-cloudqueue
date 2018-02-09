@@ -2,7 +2,7 @@
 
 > This is a fork of faulker's laravel5 rackspace cloud queue (https://github.com/faulker/laravel5-rackspace-cloudqueue)
 
-##Installation
+## Installation
 
 ### Install via Composer
 Require this package in your composer.json and run composer update:
@@ -43,7 +43,7 @@ return array(
 return array(
 
     'providers'  => array(
-        'cang-ha\RackspaceCloudQueue\RackspaceCloudQueueServiceProvider'
+        'CangHA\RackspaceCloudQueue\RackspaceCloudQueueServiceProvider'
     ),
 );
 
