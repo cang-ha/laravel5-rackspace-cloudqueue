@@ -1,9 +1,9 @@
-<?php namespace Faulker\RackspaceCloudQueue\Queue;
+<?php namespace CangHA\RackspaceCloudQueue\Queue;
 
 use OpenCloud\Common\Constants\Datetime;
 use OpenCloud\Queues\Service as OpenCloudService;
 use OpenCloud\Queues\Resource\Queue as OpenCloudQueue;
-use Faulker\RackspaceCloudQueue\Queue\Jobs\RackspaceCloudQueueJob;
+use CangHA\RackspaceCloudQueue\Queue\Jobs\RackspaceCloudQueueJob;
 use Illuminate\Queue\Queue;
 use Illuminate\Contracts\Queue\Queue as QueueContract;
 
@@ -87,7 +87,7 @@ class RackspaceCloudQueue extends Queue implements QueueContract
      *
      * @param null $queue
      *
-     * @return \Faulker\RackspaceCloudQueue\Queue\Jobs\RackspaceCloudQueueJob
+     * @return \CangHA\RackspaceCloudQueue\Queue\Jobs\RackspaceCloudQueueJob
      */
     public function pop($queue = null)
     {
