@@ -1,13 +1,13 @@
 # Laravel 5 Rackspace CloudQueue Driver
 
-> NOTE: This is a fork of Russell Todd's Laravel 5.0 branch (https://github.com/npmweb/laravel-rackspace-cloudqueue)
+> NOTE: This is a fork of Russell Todd's Laravel 5.0 branch (https://github.com/faulker/laravel5-rackspace-cloudqueue)
 
 ##Installation
 
 ### Install via Composer
 Require this package in your composer.json and run composer update:
 
-"faulker/laravel5-rackspace-cloudqueue": "~1.0"
+"CangHA/laravel5-rackspace-cloudqueue": "~1.0"
 
 ### Add Configuration
 
@@ -35,7 +35,7 @@ return array(
 
 ```
 
-### Add Service Provider
+### Add Service Provider (Only for Laravel 5.4 and below)
 
 ```PHP
 /// config/app.php
@@ -43,7 +43,7 @@ return array(
 return array(
 
     'providers'  => array(
-        'Faulker\RackspaceCloudQueue\RackspaceCloudQueueServiceProvider'
+        'CangHA\RackspaceCloudQueue\RackspaceCloudQueueServiceProvider'
     ),
 );
 
