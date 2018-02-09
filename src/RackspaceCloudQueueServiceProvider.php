@@ -1,6 +1,6 @@
-<?php namespace Faulker\RackspaceCloudQueue;
+<?php namespace CangHA\RackspaceCloudQueue;
 
-use Faulker\RackspaceCloudQueue\Queue\Connectors\RackspaceCloudQueueConnector;
+use CangHA\RackspaceCloudQueue\Queue\Connectors\RackspaceCloudQueueConnector;
 use Illuminate\Support\ServiceProvider;
 use Queue;
 
