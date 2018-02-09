@@ -7,7 +7,7 @@
 ### Install via Composer
 Require this package in your composer.json and run composer update:
 
-"CangHA/laravel5-rackspace-cloudqueue": "~1.0"
+"cang-ha/laravel5-rackspace-cloudqueue": "~1.0"
 
 ### Add Configuration
 
