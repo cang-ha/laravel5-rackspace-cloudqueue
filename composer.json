@@ -28,14 +28,14 @@
   "autoload": {
     "psr-4": {
       "CangHA\\RackspaceCloudQueue\\": "src/"
-    }
+    },
     "extra": {
         "laravel": {
             "providers": [
                 'CangHA\\RackspaceCloudQueue\\RackspaceCloudQueueServiceProvider'
             ],
         }
-    },
+    }
   },
   "require-dev": {
     "phpunit/phpunit": "5.*",
