@@ -1,6 +1,6 @@
-<?php namespace Faulker\RackspaceCloudQueue\Queue\Connectors;
+<?php namespace CangHA\RackspaceCloudQueue\Queue\Connectors;
 
-use Faulker\RackspaceCloudQueue\Queue\RackspaceCloudQueue;
+use CangHA\RackspaceCloudQueue\Queue\RackspaceCloudQueue;
 use OpenCloud\Rackspace;
 use OpenCloud\Queues\Service;
 use Illuminate\Queue\Connectors\ConnectorInterface;
@@ -23,7 +23,7 @@ class RackspaceCloudQueueConnector implements ConnectorInterface
      *
      * @param array $config
      *
-     * @return \Faulker\RackspaceCloudQueue\Queue\RackspaceCloudQueue
+     * @return \CangHA\RackspaceCloudQueue\Queue\RackspaceCloudQueue
      */
     public function connect(array $config)
     {
