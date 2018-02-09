@@ -1,4 +1,4 @@
-<?php namespace Faulker\RackspaceCloudQueue\Queue\Jobs;
+<?php namespace CangHA\RackspaceCloudQueue\Queue\Jobs;
 
 use Illuminate\Container\Container;
 use Illuminate\Queue\Jobs\Job;
