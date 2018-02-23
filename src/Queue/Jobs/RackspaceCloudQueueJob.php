@@ -30,16 +30,6 @@ class RackspaceCloudQueueJob extends Job implements JobContract {
     }
 
     /**
-     * Fire the job.
-     *
-     * @return void
-     */
-    public function fire()
-    {
-        $this->resolveAndFire(json_decode($this->getRawBody(), true));
-    }
-
-    /**
      * Release the job back into the queue.
      *
      * @param  int $delay
@@ -50,16 +40,15 @@ class RackspaceCloudQueueJob extends Job implements JobContract {
         $this->message->delete($this->message->getClaimIdFromHref());
     }
 
-    /**
+     /**
      * Get the number of times the job has been attempted.
-     *
-     * @throws \RuntimeException
+     * RackspaceCloudQueueJob::attempts() is unsupported
      */
     public function attempts()
     {
-        throw new \RuntimeException('RackspaceCloudQueueJob::attempts() is unsupported');
+        return 1;
     }
-
+    
     /**
      * Get the raw body string for the job.
      *
