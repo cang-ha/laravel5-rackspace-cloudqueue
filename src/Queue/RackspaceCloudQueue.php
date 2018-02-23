@@ -74,12 +74,12 @@ class RackspaceCloudQueue extends Queue implements QueueContract
 
     /**
      * Push a new job onto the queue after a delay.
-     *
-     * @throws \RuntimeException
+     * Rackspace does not support later method, made it as normal push method
+     * 
      */
     public function later($delay, $job, $data = '', $queue = null)
     {
-        throw new \RuntimeException('RackspaceCloudQueue::later() method is not supported');
+        return $this->push($job, $data, $queue);
     }
 
     /**
@@ -151,6 +151,20 @@ class RackspaceCloudQueue extends Queue implements QueueContract
     public function getOpenCloudQueue()
     {
         return $this->queue;
+    }
+    
+     /**
+     * Get the size of the queue.
+     *
+     * @param  string $queue
+     * @return int
+     */
+    public function size($queue = null)
+    {
+        $queue = $this->getQueue($queue);
+
+        $response = $queue->getStats();
+        return (int) $response->getBody()->messages->total;
     }
 
 }
